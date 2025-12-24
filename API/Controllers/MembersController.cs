@@ -1,14 +1,14 @@
+using API.Controllers;
 using DatingApp.Data;
 using DatingApp.Entities;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MembersController(AppDbContext context) : ControllerBase
+    [Authorize]
+    public class MembersController(AppDbContext context) : BaseApiController
     {
         private readonly AppDbContext _context = context;
 
