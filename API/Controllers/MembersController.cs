@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Controllers
 {
-    [Authorize]
+
     public class MembersController(AppDbContext context) : BaseApiController
     {
         private readonly AppDbContext _context = context;
@@ -18,7 +18,7 @@ namespace DatingApp.Controllers
             var members = await _context.Users.ToListAsync();
             return members;
         }
-
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetMember(string id)
         {
