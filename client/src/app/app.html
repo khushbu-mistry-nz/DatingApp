@@ -1,5 +1,10 @@
-<app-nav/>
-<app-home [membersFromApp]="members()"/>
+<app-nav />
+
+
+<div [class.mt-24]="router.url !== '/'" [class.container]="router.url !== '/'" [class.mx-auto]="router.url !== '/'">
+  <router-outlet />
+</div>
+
 <!-- <div class="card bg-base-100 w-1/2 mx-auto p-10 mt-24 shadow-xl">
   <h3 class="text-2xl text-red-500">{{title}}</h3>
   <ul class="list">
@@ -10,6 +15,3 @@
     }
 </ul>
 </div> -->
-
-
-
